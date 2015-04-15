@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+// adding in the view Controller
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,19 +18,22 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
     
-    // this code is the beginning of a custom screen
-    UIScreen *screen = [UIScreen mainScreen];
-    CGRect viewRect = [screen bounds];
-    // print the screen dimensions
-    NSLog(@"Screen is %.2f tall and %.2f wide", viewRect.size.height, viewRect.size.width);
+    // this code combines te first two lines into one line of code.
+    CGRect viewRect = [[UIScreen mainScreen]bounds];
     // create a UIWindow vis code and Allocate memory for it
+    self.window = [[UIWindow alloc]initWithFrame:viewRect];
+
+    // Create a view controller
+    self.viewController = [[ViewController alloc]init];
     
-    
-    
-    
-    NSLog(@"Launched From AppeDelegate");
+    // recieve keyboard and touch events
+    [self.window makeKeyAndVisible];
+    // create the view
+    self.window.rootViewController = self.viewController;
+
+
     return YES;
 }
 
