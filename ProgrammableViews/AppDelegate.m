@@ -17,6 +17,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // this code is the beginning of a custom screen
+    UIScreen *screen = [UIScreen mainScreen];
+    CGRect viewRect = [screen bounds];
+    // print the screen dimensions
+    NSLog(@"Screen is %.2f tall and %.2f wide", viewRect.size.height, viewRect.size.width);
+    // create a UIWindow vis code and Allocate memory for it
+    
+    
+    
+    
+    NSLog(@"Launched From AppeDelegate");
     return YES;
 }
 
