@@ -11,5 +11,11 @@
 @interface ViewController : UIViewController
 
 
+
+// create a button method
+- (void)buttonPressed:(UIButton *)sender;
+
+@property (strong,nonatomic) UILabel *labelOne;
+
 @end
 
